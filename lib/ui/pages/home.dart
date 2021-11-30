@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/ui/components/day_images.dart';
 import 'package:weather_app/ui/components/location_imput.dart';
-import 'package:weather_app/ui/pages/weather_hour_bloc.dart';
+import 'package:weather_app/ui/components/day_images_bloc.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -23,14 +23,6 @@ class Home extends StatelessWidget {
         // the App.build method, and use it to set our appbar title.
         title: Text('Weather App'),
       ),
-
-      // BlocBuilder(
-      //       bloc: BlocProvider.of<SkyPhotoHourBloc>(context),
-      //       builder: (context, state) {
-      //         if(state is SkyPhotoInicialState)
-      //         return Home();
-      //       },
-      //     ),
       body: Column(
         children: [
           DayTimesImage(),
