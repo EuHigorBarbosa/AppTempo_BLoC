@@ -40,6 +40,12 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need to get your location</string>
+	<key>UIBackgroundModes</key>
+	<string>location</string>
+
 	<false/>
 </dict>
 </plist>

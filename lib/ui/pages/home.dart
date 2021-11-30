@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/ui/components/location_imput.dart';
 import 'package:weather_app/ui/pages/weather_hour_bloc.dart';
 
 class Home extends StatelessWidget {
@@ -43,7 +44,7 @@ class Home extends StatelessWidget {
                     'Quando está na hora ${state.dataFromSuccessState['counterHora']} seu dia está igual ...'),
                 Image.asset(
                   state.imageUrl,
-                  height: 300,
+                  height: 200,
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
@@ -73,6 +74,7 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
+                LocationInput()
               ],
             ),
           );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/ui/components/location_bloc.dart';
 import 'package:weather_app/ui/pages/home.dart';
 import 'package:weather_app/ui/pages/weather_hour_bloc.dart';
 
@@ -20,6 +21,10 @@ class MyApp extends StatelessWidget {
         ),
         home: MultiBlocProvider(
           providers: [
+            BlocProvider<GetLocationBloc>(
+              create: (context) =>
+                  GetLocationBloc(GetLocationInicialState(imageMapUrl: '')),
+            ),
             BlocProvider<SkyPhotoHourBloc>(
               create: (context) => SkyPhotoHourBloc(SkyPhotoInicialState(
                   dataFromSuccessState: {},
