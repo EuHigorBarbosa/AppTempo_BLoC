@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/ui/components/day_images.dart';
 import 'package:weather_app/ui/components/location_imput.dart';
 import 'package:weather_app/ui/pages/weather_hour_bloc.dart';
 
@@ -30,58 +31,14 @@ class Home extends StatelessWidget {
       //         return Home();
       //       },
       //     ),
-      body: BlocBuilder<SkyPhotoHourBloc, SkyPhotoState>(
-        bloc: BlocProvider.of<SkyPhotoHourBloc>(context),
-        builder: (context, state) {
-          print('RunTime State: ${state.runtimeType}');
-          print('Content inside State: ${state.dataFromSuccessState}');
-
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                    'Quando está na hora ${state.dataFromSuccessState['counterHora']} seu dia está igual ...'),
-                Image.asset(
-                  state.imageUrl,
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.fitWidth,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        BlocProvider.of<SkyPhotoHourBloc>(context)
-                            .add(CounterHourEventIncrement());
-                      },
-                      child: const Icon(Icons.add),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        BlocProvider.of<SkyPhotoHourBloc>(context)
-                            .add(CounterHourEventDecrement());
-                      },
-                      child: const Icon(Icons.remove),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        BlocProvider.of<SkyPhotoHourBloc>(context)
-                            .add(CounterHourEventReset());
-                      },
-                      child: const Icon(Icons.reply_all_outlined),
-                    ),
-                  ],
-                ),
-                LocationInput()
-              ],
-            ),
-          );
-        },
+      body: Column(
+        children: [
+          DayTimesImage(),
+          LocationInput(),
+        ],
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
+    // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
 //context.read<MyFormBloc>().add(EmailChangedEvent(email: value));

@@ -4,8 +4,6 @@ import 'dart:ui';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:weather_app/data/model/wheater_model.dart';
-
 class SkyPhotoHourBloc extends Bloc<CounterHourEvent, SkyPhotoState> {
   SkyPhotoHourBloc(SkyPhotoState initialState) : super(initialState);
   int counter = 0;

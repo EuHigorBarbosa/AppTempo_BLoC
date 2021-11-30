@@ -11,8 +11,6 @@ class LocationInput extends StatefulWidget {
   _LocationInputState createState() => _LocationInputState();
 }
 
-String _previewImageUrl = '';
-
 class _LocationInputState extends State<LocationInput> {
   @override
   Widget build(BuildContext context) {
